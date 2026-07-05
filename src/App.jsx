@@ -1,122 +1,91 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import { useState } from "react";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [page, setPage] = useState(0);
+
+  if (page === 1) {
+    return (
+      <div>
+        <button onClick={() => setPage(0)}>回首頁</button>
+
+        <h1>客人資料</h1>
+
+        <p>姓名</p>
+        <input placeholder="輸入客人姓名" />
+
+        <p>膚色</p>
+        <input placeholder="例如：白皙、自然、小麥" />
+
+        <p>備註</p>
+        <textarea placeholder="例如：敏感肌、容易出油"></textarea>
+
+        <br />
+        <br />
+
+        <button onClick={() => alert("客人資料已儲存")}>
+          儲存
+        </button>
+      </div>
+    );
+  }if (page === 2) {
+    return (
+      <div>
+        <button onClick={() => setPage(0)}>回首頁</button>
+        <h1>新增工作紀錄</h1>
+        <p>這裡之後會填通告內容、服裝照片、使用產品。</p>
+      </div>
+    );
+  }
+
+  if (page === 3) {
+    return (
+      <div>
+        <button onClick={() => setPage(0)}>回首頁</button>
+        <h1>化妝品資料庫</h1>
+        <p>這裡之後會放品牌、品名、色號、分類。</p>
+      </div>
+    );
+  }if (page === 4) {
+    return (
+      <div>
+        <button onClick={() => setPage(0)}>回首頁</button>
+        <h1>我的化妝箱</h1>
+        <p>這裡之後會放你目前擁有的化妝品清單。</p>
+      </div>
+    );
+  }
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <div>
+      <h1>Makeup Manager</h1>
+      <h2>歡迎回來，妙妙！</h2>
 
-      <div className="ticks"></div>
+      <button onClick={() => setPage(1)}>
+        客人資料
+      </button>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+      <br />
+      <br />
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+      <button onClick={() => setPage(2)}>
+        新增工作紀錄
+      </button>
+
+      <br />
+      <br />
+
+      <button onClick={() => setPage(3)}>
+        化妝品資料庫
+      </button>
+
+      <br />
+      <br />
+
+      <button onClick={() => setPage(4)}>
+        我的化妝箱
+      </button>
+    </div>
+  );
 }
 
-export default App
+export default App;
