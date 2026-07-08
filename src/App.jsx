@@ -1,13 +1,6 @@
 import { useState } from "react";
-
-function getData(key, defaultValue) {
-  const saved = localStorage.getItem(key);
-  return saved ? JSON.parse(saved) : defaultValue;
-}
-
-function saveData(key, value) {
-  localStorage.setItem(key, JSON.stringify(value));
-}
+import Home from "./pages/Home";
+import { getData, saveData } from "./utils/storage";
 
 function App() {
   const [page, setPage] = useState("home");
@@ -457,22 +450,7 @@ function App() {
     );
   }
 
-  return (
-    <div>
-      <h1>💄 Makeup Manager</h1>
-      <h3>歡迎回來，妙妙！</h3>
-
-      <hr />
-
-      <button onClick={() => setPage("clients")}>客人管理</button>
-      <br /><br />
-
-      <button onClick={() => setPage("products")}>化妝品資料庫</button>
-      <br /><br />
-
-      <button onClick={() => setPage("jobs")}>工作紀錄</button>
-    </div>
-  );
+return <Home setPage={setPage} />;
 }
 
 export default App;
